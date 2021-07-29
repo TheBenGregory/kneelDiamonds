@@ -10,7 +10,7 @@ document.addEventListener(
 )
 
 
-const styles = getStyles()
+export const styles = getStyles()
 
 // document.addEventListener(
 //     "change",
@@ -37,4 +37,5 @@ export const JewelryStyles = () => {
 
     return html
 }
+
 

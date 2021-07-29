@@ -1,22 +1,65 @@
-import { getOrders } from "./database.js"
+import { getMetals, getOrders, getSizes, getStyles, } from "./database.js"
+import { addCustomOrder } from "./database.js"
+
+const orders = getOrders = () => {
+
+let html = "<ul>"
+
+const listItems = orders.map(buildOrderListItem)
+
+html += listItems.join("")
+html += "</ul>"
+
+return html
+}
 
 const buildOrderListItem = (order) => {
-    return `<li>
-        Order #${order.id} was placed on ${order.timestamp}
-    </li>`
-}
 
-export const Orders = () => {
-   
-    const orders = getOrders()
 
-    let html = "<ul>"
+    const metals = getMetals()
+    const styles = getStyles()
+    const sizes = getSizes()
 
-    const listItems = orders.map(buildOrderListItem)
+    
+    const metal = getMetals()
+    const foundMetal = metals.find(
+        (metal) => {
+            if (metal.id === order.metalId)
+            return true
+        }
+        )
+        
+        const style = getStyles()
+        const foundStyle = styles.find(
+            (style) => {
+                if (style.id === order.styleId)
+                return true
+            }
+            )
+            
+            const size = getSizes()
+            const foundSize = sizes.find(
+                (size) => {
+                    if (size.id === order.sizeId)
+                    return true
+                }
+                )
+                const totalCost = (foundSize.price + foundStyle.price + foundMetal.price)
+                
+                
+                const costString = totalCost.toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD"
+                })
+                `<li>
+                Order #${order.id} cost ${costString}
+                </li>`
+                
+            }
+            
+            // return `<li>
+            //     Order #${order.id} was placed on ${order.timestamp}
+            // </li>`
 
-    html += listItems.join("")
-    html += "</ul>"
-
-    return html
-}
-
+            export const Orders = () => {
+            }
