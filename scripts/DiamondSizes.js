@@ -1,6 +1,6 @@
 import { getSizes, setSize } from "./database.js"
 
-const sizes = getSizes()
+export const sizes = getSizes()
 
 document.addEventListener(
     "change",
@@ -35,4 +35,6 @@ export const DiamondSizes = () => {
 
     return html
 }
+
+
 

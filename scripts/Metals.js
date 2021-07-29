@@ -10,7 +10,7 @@ document.addEventListener(
 )
 
 
-const metals = getMetals()
+export const metals = getMetals()
 
 // document.addEventListener(
 //     "change",
@@ -36,4 +36,9 @@ export const Metals = () => {
 
     return html
 }
+
+
+
+// Remember that the function you pass to find() must return true/false
+
 

@@ -42,7 +42,7 @@ export const getSizes = () => {
 
 export const getStyles = () => {
     return database.styles.map(style => ({ ...style }))
-}
+} 
 
 export const getOrders = () => {
     return database.customOrders.map(order => ({ ...order }))
