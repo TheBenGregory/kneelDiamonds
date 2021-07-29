@@ -80,3 +80,7 @@ export const addCustomOrder = () => {
     // Broadcast a notification that permanent state has changed
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
+export const getCustomOrders = (id) => {
+    database.orderBuilder.customOrdersid = id
+}
