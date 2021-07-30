@@ -81,6 +81,6 @@ export const addCustomOrder = () => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-export const getCustomOrders = (id) => {
-    database.orderBuilder.customOrdersid = id
+export const getCustomOrders = () => {
+    return database.customOrders.map( order => ({ ...order }))
 }
